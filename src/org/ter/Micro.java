@@ -1,5 +1,7 @@
 package org.ter;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -64,8 +66,11 @@ public static void main(String[] args) throws InterruptedException {
 	driver.findElement(By.id("perAddress3")).sendKeys("Thidirnagar");
 	driver.findElement(By.id("perState")).sendKeys("Tamilnadu");
 	driver.findElement(By.id("perPincode")).sendKeys("600100");
-	
-	
+	List<WebElement> list = driver.findElements(By.tagName("tr"));
+	for (int i = 0; i < list.size(); i++) {
+		WebElement element = list .get(i);
+		System.out.println(element.getText());
+	}
 	
 	
 	
